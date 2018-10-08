@@ -115,6 +115,15 @@ class SlackPlugin extends Plugin {
             $ost->logError('Slack Plugin not configured', 'You need to read the Readme and configure a webhook URL before using this.');
         }
 
+		// If this is an update notification use the update webhook (if configured)
+		// TODO detect this is an update using less of a hack!
+        if ($heading contains 'updated') {
+            $updates_url = $this->getConfig()->get('slack-webhook-url-updates');
+            if (!empty($updates_url)){
+                $url = $updates_url;
+            }
+        }
+
         // Check the subject, see if we want to filter it.
         $regex_subject_ignore = $this->getConfig()->get('slack-regex-subject-ignore');
         // Filter on subject, and validate regex:

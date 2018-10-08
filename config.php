@@ -37,7 +37,14 @@ class SlackPluginConfig extends PluginConfig {
                 'hint'  => $__('Readme first: https://github.com/clonemeagain/osticket-slack')
                     )),
             'slack-webhook-url'          => new TextboxField(array(
-                'label'         => $__('Webhook URL'),
+                'label'         => $__('Webhook URL (new tickets)'),
+                'configuration' => array(
+                    'size'   => 100,
+                    'length' => 200
+                ),
+                    )),
+            'slack-webhook-url-updates'          => new TextboxField(array(
+                'label'         => $__('Webhook URL (updates)'),
                 'configuration' => array(
                     'size'   => 100,
                     'length' => 200
