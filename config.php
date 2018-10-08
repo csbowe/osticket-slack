@@ -2,7 +2,7 @@
 
 require_once INCLUDE_DIR . 'class.plugin.php';
 
-class SlackPluginConfig extends PluginConfig {
+class SlackPluginConfig2 extends PluginConfig {
 
     // Provide compatibility function for versions of osTicket prior to
     // translation support (v1.9.4)
@@ -34,7 +34,7 @@ class SlackPluginConfig extends PluginConfig {
         return array(
             'slack'                      => new SectionBreakField(array(
                 'label' => $__('Slack notifier'),
-                'hint'  => $__('Readme first: https://github.com/clonemeagain/osticket-slack')
+                'hint'  => $__('Readme first: https://github.com/csbowe/osticket-slack')
                     )),
             'slack-webhook-url'          => new TextboxField(array(
                 'label'         => $__('Webhook URL (new tickets)'),
@@ -43,7 +43,7 @@ class SlackPluginConfig extends PluginConfig {
                     'length' => 200
                 ),
                     )),
-            'slack-webhook-url-updates'          => new TextboxField(array(
+            'slack-webhook-url-updates'  => new TextboxField(array(
                 'label'         => $__('Webhook URL (updates)'),
                 'configuration' => array(
                     'size'   => 100,

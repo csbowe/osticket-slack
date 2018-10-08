@@ -8,9 +8,9 @@ require_once(INCLUDE_DIR . 'class.config.php');
 require_once(INCLUDE_DIR . 'class.format.php');
 require_once('config.php');
 
-class SlackPlugin extends Plugin {
+class SlackPlugin2 extends Plugin {
 
-    var $config_class = "SlackPluginConfig";
+    var $config_class = "SlackPluginConfig2";
 
     /**
      * The entrypoint of the plugin, keep short, always runs.
@@ -116,13 +116,15 @@ class SlackPlugin extends Plugin {
         }
 
 		// If this is an update notification use the update webhook (if configured)
-		// TODO detect this is an update using less of a hack!
-        if ($heading contains 'updated') {
+        
+		if (strpos($heading, 'updated') !== false) {
             $updates_url = $this->getConfig()->get('slack-webhook-url-updates');
             if (!empty($updates_url)){
                 $url = $updates_url;
+				$ost->logDebug('Updates URL', 'Slack notification using updates webhook url. ' . updates_url);
             }
         }
+		
 
         // Check the subject, see if we want to filter it.
         $regex_subject_ignore = $this->getConfig()->get('slack-regex-subject-ignore');

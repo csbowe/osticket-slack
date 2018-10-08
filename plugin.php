@@ -1,11 +1,11 @@
 <?php
 
 return array(
-    'id'          => 'osticket:slack',
-    'version'     => '0.2',
-    'name'        => 'Slack notifier',
-    'author'      => 'Thammanna Jammada',
-    'description' => 'Notify Slack on new ticket.',
-    'url'         => 'https://github.com/thammanna/osticket-slack',
-    'plugin'      => 'slack.php:SlackPlugin',
+    'id'          => 'osticket:slackbeta',
+    'version'     => '0.3',
+    'name'        => 'Slack notifier (beta)',
+    'author'      => 'Thammanna Jammada, Cameron Bowe',
+    'description' => 'Get Slack notifications for new tickets and ticket updates.',
+    'url'         => 'https://github.com/csbowe/osticket-slack',
+    'plugin'      => 'slack.php:SlackPlugin2',
 );
